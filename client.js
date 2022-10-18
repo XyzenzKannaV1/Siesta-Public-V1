@@ -158,14 +158,14 @@ const connect = async () => {
             }
          }
          let txt = (groupSet.text_welcome != '' ? groupSet.text_welcome : text_welcome).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
-         if (groupSet.welcome) client.sendMessageModify(room.id, txt, Siesta - Multi Device, {
+         if (groupSet.welcome) client.sendMessageModify(room.id, txt, null, {
             largeThumb: true,
             thumbnail: pic,
             url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
          })
       } else if (room.action == 'remove') {
          let txt = (groupSet.text_left != '' ? groupSet.text_left : text_left).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
-         if (groupSet.left) client.sendMessageModify(room.id, txt, Siesta - Multi Device, {
+         if (groupSet.left) client.sendMessageModify(room.id, txt, null, {
             largeThumb: true,
             thumbnail: pic,
             url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
