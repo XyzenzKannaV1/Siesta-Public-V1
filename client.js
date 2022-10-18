@@ -109,7 +109,7 @@ const connect = async () => {
             connect().catch(() => connect())
          }
       }   
-      // if (update.receivedPendingNotifications) await client.reply(global.owner + '@c.us', Func.texted('bold', `🚩 Successfully connected to WhatsApp.`))
+      // if (update.receivedPendingNotifications) await client.reply(global.owner + '@c.us', Func.texted('bold', `ðŸš© Successfully connected to WhatsApp.`))
    })
 
    client.ev.on('creds.update', () => saveState)
@@ -159,6 +159,7 @@ const connect = async () => {
          }
          let txt = (groupSet.text_welcome != '' ? groupSet.text_welcome : text_welcome).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
          if (groupSet.welcome) client.sendMessageModify(room.id, txt, null, {
+         	title: 'Siesta Beta Test'
             largeThumb: true,
             thumbnail: pic,
             url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
@@ -166,6 +167,7 @@ const connect = async () => {
       } else if (room.action == 'remove') {
          let txt = (groupSet.text_left != '' ? groupSet.text_left : text_left).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
          if (groupSet.left) client.sendMessageModify(room.id, txt, null, {
+            title: 'Siesta Beta Test'
             largeThumb: true,
             thumbnail: pic,
             url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
