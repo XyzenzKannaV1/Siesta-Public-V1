@@ -40,7 +40,7 @@ Socket = (...args) => {
    let parseMention = text => [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
    
    let tags = {
-      album: 'Neoxr Music',
+      album: 'Siesta Music',
       APIC: fs.readFileSync('./media/image/thumb.jpg')
    }
    
