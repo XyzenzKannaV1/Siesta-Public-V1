@@ -132,10 +132,10 @@ module.exports = async (client, m) => {
             if (setting.self && !isOwner && !m.fromMe) return
             if (setting.pluginDisable.includes(name)) return client.reply(m.chat, Func.texted('bold', `ðŸš© Plugin disabled by Owner.`), m)
             if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
-               title : 'Siesta Beta Test',
+            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Untuk Bisa Mengunakan Bot Di Personal Chat (Pc), Kamu Harus Upgrade Premium Dengan Harga Rp. 5,000,- Dan Bisa Mendapatkan 1K limits.\n\n Jika Ingin Upgrade Premium Bisa Chat Owner*${prefixes[0]}owner*`, m, {
+               title : 'Maaf Akses Di Tolakk',
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/4de8c14a9978c45c6ac59.jpg'),
                url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
             }).then(() => chats.lastchat = new Date() * 1)
             if (!['me', 'owner'].includes(name) && users && (users.banned || new Date - users.banTemp < global.timer)) return
@@ -211,10 +211,10 @@ module.exports = async (client, m) => {
             if (m.isGroup && !['exec'].includes(name) && groupSet.mute) continue
             if (setting.pluginDisable.includes(name)) continue
             if (!m.isGroup && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
-               title: 'Siesta Beta Test',
+            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Untuk Bisa Mengunakan Bot Di Personal Chat (Pc), Kamu Harud Upgrade Premium Dengan Harga Rp. 5,000,- Dan Bisa Mendapatkan 1K limits.\n\n Jika Ingin Upgrade Premium Bisa Chat Owner*${prefixes[0]}owner*`, m, {
+               title: 'Maaf Akses Di Tolakk',
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/1d91c4652a272a848aaa9.jpg'),
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/4de8c14a9978c45c6ac59.jpg'),
                url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
             }).then(() => chats.lastchat = new Date() * 1)
             if (setting.self && !['chatAI', 'exec'].includes(name) && !isOwner && !m.fromMe) continue
