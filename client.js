@@ -85,7 +85,7 @@ const connect = async () => {
       } = update
       if (lastDisconnect == 'undefined' && qr != 'undefined') {
          qrcode.generate(qr, {
-            small: false
+            small: true
          })
       }
       if (connection === 'connecting') spinnies.add('start', {
