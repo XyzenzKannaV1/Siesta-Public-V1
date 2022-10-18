@@ -24,7 +24,7 @@ module.exports = async (client, m) => {
       if (!m.isGroup) await client.readMessages([m.key])
       if (m.isGroup) groupSet.activity = new Date() * 1
       if (m.chat.endsWith('broadcast') && m.mtype != 'protocolMessage') {
-         let caption = `乂  *S T O R I E S*\n\n`
+         let caption = `ä¹‚  *S T O R I E S*\n\n`
          if (/video|image/.test(m.mtype)) {
             caption += `${body ? body : ''}\n\n`
             caption += `*From : @${m.sender.replace(/@.+/, '')} (${client.getName(m.sender)})*`
@@ -37,7 +37,7 @@ module.exports = async (client, m) => {
          }
       }
       if (m.isGroup && !groupSet.stay && (new Date * 1) >= groupSet.expired && groupSet.expired != 0) {
-         return client.reply(m.chat, Func.texted('italic', '🚩 Bot time has expired and will leave from this group, thank you.', null, {
+         return client.reply(m.chat, Func.texted('italic', 'ðŸš© Bot time has expired and will leave from this group, thank you.', null, {
             mentions: participants.map(v => v.id)
          })).then(async () => {
             groupSet.expired = 0
@@ -50,7 +50,7 @@ module.exports = async (client, m) => {
          chats.chat += 1
       }
       if (m.isGroup && !m.isBot && users.afk > -1) {
-         client.reply(m.chat, `You are back online after being offline for : ${Func.texted('bold', Func.toTime(new Date - users.afk))}\n\n• ${Func.texted('bold', 'Reason')}: ${users.afkReason ? users.afkReason : '-'}`, m)
+         client.reply(m.chat, `You are back online after being offline for : ${Func.texted('bold', Func.toTime(new Date - users.afk))}\n\nâ€¢ ${Func.texted('bold', 'Reason')}: ${users.afkReason ? users.afkReason : '-'}`, m)
          users.afk = -1
          users.afkReason = ''
       }
@@ -114,9 +114,9 @@ module.exports = async (client, m) => {
             global.db.chats[m.chat].lastseen = new Date() * 1
          }
          if (!commands.includes(command) && matcher.length > 0 && !setting.self) {
-            if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `🚩 Command you are using is wrong, try the following recommendations :\n\n${matcher.map(v => '➠ *' + (isPrefix ? isPrefix : '') + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
+            if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `ðŸš© Command you are using is wrong, try the following recommendations :\n\n${matcher.map(v => 'âž  *' + (isPrefix ? isPrefix : '') + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
          }
-         if (setting.error.includes(command) && !setting.self) return client.reply(m.chat, Func.texted('bold', `🚩 Command _${isPrefix + command}_ disabled.`), m)
+         if (setting.error.includes(command) && !setting.self) return client.reply(m.chat, Func.texted('bold', `ðŸš© Command _${isPrefix + command}_ disabled.`), m)
          if (commands.includes(command)) {
             users.hit += 1
             users.usebot = new Date() * 1
@@ -130,9 +130,9 @@ module.exports = async (client, m) => {
             if (!turn && !turn_hidden) continue
             if (!m.isGroup && global.blocks.some(no => m.sender.startsWith(no))) return client.updateBlockStatus(m.sender, 'block')
             if (setting.self && !isOwner && !m.fromMe) return
-            if (setting.pluginDisable.includes(name)) return client.reply(m.chat, Func.texted('bold', `🚩 Plugin disabled by Owner.`), m)
+            if (setting.pluginDisable.includes(name)) return client.reply(m.chat, Func.texted('bold', `ðŸš© Plugin disabled by Owner.`), m)
             if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
+            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
                url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
@@ -156,7 +156,7 @@ module.exports = async (client, m) => {
                continue
             }
             if (cmd.limit && users.limit < 1) {
-               return client.reply(m.chat, `🚩 Your bot usage has reached the limit and will be reset at 00.00\n\nTo get more limits, upgrade to a premium plan send *${prefixes[0]}premium*`, m).then(() => users.premium = false)
+               return client.reply(m.chat, `ðŸš© Your bot usage has reached the limit and will be reset at 00.00\n\nTo get more limits, upgrade to a premium plan send *${prefixes[0]}premium*`, m).then(() => users.premium = false)
                continue
             }
             if (cmd.limit && users.limit > 0) {
@@ -164,7 +164,7 @@ module.exports = async (client, m) => {
                if (users.limit >= limit) {
                   users.limit -= limit
                } else {
-                  client.reply(m.chat, Func.texted('bold', `🚩 Your limit is not enough to use this feature.`), m)
+                  client.reply(m.chat, Func.texted('bold', `ðŸš© Your limit is not enough to use this feature.`), m)
                   continue
                }
             }
@@ -210,9 +210,10 @@ module.exports = async (client, m) => {
             if (m.isGroup && !['exec'].includes(name) && groupSet.mute) continue
             if (setting.pluginDisable.includes(name)) continue
             if (!m.isGroup && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
+            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
+               title: 'Siesta Beta Test'
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
+               thumbnail: await Func.fetchBuffer(''https://telegra.ph/file/1d91c4652a272a848aaa9.jpg"),
                url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
             }).then(() => chats.lastchat = new Date() * 1)
             if (setting.self && !['chatAI', 'exec'].includes(name) && !isOwner && !m.fromMe) continue
