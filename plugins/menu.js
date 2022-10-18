@@ -7,7 +7,7 @@ exports.run = {
       isPrefix
    }) => {
       try {
-      let captions = `An automated system (WhatsApp Bot) that can help to do something, search and get data / information only through WhatsApp.\n\n◦ *Database* : PostgreSQL\n◦ *Library* : Baileys v4.3.0\n◦ *Rest API* : https://api.neoxr.my.id\n◦ *Source* : https://github.com/neoxr/neoxr-bot\n\nIf you find an error or want to upgrade premium plan contact the owner.\n\n
+      let captions = `An automated system (WhatsApp Bot) that can help to do something, search and get data / information only through WhatsApp.\n\n◦ *Database* : PostgreSQL\n◦ *Library* : Baileys v4.3.0\n◦ *My Web* : https://linktr.ee/kannachanv1\n◦ *Github* : https://github.com/XyzenzKannaV1\n\nIf you find an error or want to upgrade premium plan contact the owner.\n\n
 乂  *U S E R - I N F O*
       
 ◦  ${isPrefix}limit 
@@ -171,8 +171,8 @@ exports.run = {
 ◦  ${isPrefix}runtime`
       client.sendMessageModify(m.chat, captions, m, {
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/f8a923158032e0e6b6eb9.jpg'),
-               url: 'https://chat.whatsapp.com/JjwfWvDBTQS0j9fAUOyLMA'
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/1d91c4652a272a848aaa9.jpg'),
+               url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
             })
       } catch (e) {
          client.reply(m.chat, Func.jsonFormat(e), m)
