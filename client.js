@@ -67,7 +67,7 @@ const connect = async () => {
       printQRInTerminal: true,
       markOnlineOnConnect: true,
       msgRetryCounterMap,
-      browser: ['@neoxr / neoxr-bot', 'Chrome', '1.0.0'],
+      browser: ['@Siesta / Siest-bot', 'Chrome', '1.0.0'],
       auth: state,
       // To see the latest version : https://web.whatsapp.com/check-update?version=1&platform=web
       version: [2, 2236, 10],
@@ -158,17 +158,17 @@ const connect = async () => {
             }
          }
          let txt = (groupSet.text_welcome != '' ? groupSet.text_welcome : text_welcome).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
-         if (groupSet.welcome) client.sendMessageModify(room.id, txt, null, {
+         if (groupSet.welcome) client.sendMessageModify(room.id, txt, Siesta - Multi Device, {
             largeThumb: true,
             thumbnail: pic,
-            url: 'https://chat.whatsapp.com/Dh1USlrqIfmJT6Ji0Pm2pP'
+            url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
          })
       } else if (room.action == 'remove') {
          let txt = (groupSet.text_left != '' ? groupSet.text_left : text_left).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
-         if (groupSet.left) client.sendMessageModify(room.id, txt, null, {
+         if (groupSet.left) client.sendMessageModify(room.id, txt, Siesta - Multi Device, {
             largeThumb: true,
             thumbnail: pic,
-            url: 'https://chat.whatsapp.com/Dh1USlrqIfmJT6Ji0Pm2pP'
+            url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
          })
       }
    })
