@@ -132,7 +132,7 @@ module.exports = async (client, m) => {
             if (setting.self && !isOwner && !m.fromMe) return
             if (setting.pluginDisable.includes(name)) return client.reply(m.chat, Func.texted('bold', `ðŸš© Plugin disabled by Owner.`), m)
             if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Untuk Bisa Mengunakan Bot Di Personal Chat (Pc), Kamu Harus Upgrade Premium Dengan Harga Rp. 5,000,- Dan Bisa Mendapatkan 1K limits.\n\n Jika Ingin Upgrade Premium Bisa Chat Owner*${prefixes[0]}owner*`, m, {
+            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `Untuk Bisa Mengunakan Bot Di Personal Chat (Pc), Kamu Harus Upgrade Premium Dengan Harga Rp. 5,000,- Dan Bisa Mendapatkan 1K limits.\n\n Jika Ingin Upgrade Premium Bisa Chat Owner${prefixes[0]}owner`, m, {
                title : 'Maaf Akses Di Tolakk',
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/4de8c14a9978c45c6ac59.jpg'),
@@ -211,7 +211,7 @@ module.exports = async (client, m) => {
             if (m.isGroup && !['exec'].includes(name) && groupSet.mute) continue
             if (setting.pluginDisable.includes(name)) continue
             if (!m.isGroup && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `ðŸš© Untuk Bisa Mengunakan Bot Di Personal Chat (Pc), Kamu Harud Upgrade Premium Dengan Harga Rp. 5,000,- Dan Bisa Mendapatkan 1K limits.\n\n Jika Ingin Upgrade Premium Bisa Chat Owner*${prefixes[0]}owner*`, m, {
+            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `Untuk Bisa Mengunakan Bot Di Personal Chat (Pc), Kamu Harud Upgrade Premium Dengan Harga Rp. 5,000,- Dan Bisa Mendapatkan 1K limits.\n\n Jika Ingin Upgrade Premium Bisa Chat Owner${prefixes[0]}owner`, m, {
                title: 'Maaf Akses Di Tolakk',
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/4de8c14a9978c45c6ac59.jpg'),
