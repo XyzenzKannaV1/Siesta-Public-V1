@@ -135,7 +135,7 @@ module.exports = async (client, m) => {
             if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
-               url: 'https://chat.whatsapp.com/JjwfWvDBTQS0j9fAUOyLMA'
+               url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
             }).then(() => chats.lastchat = new Date() * 1)
             if (!['me', 'owner'].includes(name) && users && (users.banned || new Date - users.banTemp < global.timer)) return
             if (m.isGroup && !['activation'].includes(name) && groupSet.mute) continue
@@ -213,7 +213,7 @@ module.exports = async (client, m) => {
             if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
-               url: 'https://chat.whatsapp.com/Dh1USlrqIfmJT6Ji0Pm2pP'
+               url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
             }).then(() => chats.lastchat = new Date() * 1)
             if (setting.self && !['chatAI', 'exec'].includes(name) && !isOwner && !m.fromMe) continue
             if (!m.isGroup && ['chatAI'].includes(name) && body && Func.socmed(body)) continue
