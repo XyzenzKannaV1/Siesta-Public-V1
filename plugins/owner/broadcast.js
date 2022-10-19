@@ -20,7 +20,7 @@ exports.run = {
                await Func.delay(1500)
                await client.sendMessageModify(jid, text, null, {
                   title: '© Siesta - Multi Device',
-                  thumbnail: await Func.fetchBuffer('https://telegra.ph/file/aa76cce9a61dc6f91f55a.jpg'),
+                  thumbnail: await Func.fetchBuffer('https://telegra.ph/file/42c98f6d0696730a84ce8.jpg'),
                   largeThumb: true,
                   url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis',
                   mentionedJid: command == 'bcgc' ? await (await client.groupMetadata(jid)).participants.map(v => v.id) : []
