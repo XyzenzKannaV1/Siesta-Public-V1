@@ -31,9 +31,10 @@ exports.run = {
          }
          const system = global.db.setting
          client.sendMessageModify(m.chat, statistic(stats, system), m, {
+            title: Siesta - Multi Device
             ads: false,
             largeThumb: true,
-            thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+            thumbnail: await Func.fetchBuffer('https://telegra.ph/file/46f991eb9d60092227200.jpg')
          })
       } catch (e) {
          client.reply(m.chat, Func.jsonFormat(e), m)
