@@ -159,7 +159,7 @@ const connect = async () => {
          }
          let txt = (groupSet.text_welcome != '' ? groupSet.text_welcome : text_welcome).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
          if (groupSet.welcome) client.sendMessageModify(room.id, txt, null, {
-         	title: 'Njay 1 Beban Bertambah',
+         	title: 'Yahh 1 Beban Bertambah',
             largeThumb: true,
             thumbnail: pic,
             url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
