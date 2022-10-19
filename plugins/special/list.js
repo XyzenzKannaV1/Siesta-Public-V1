@@ -45,10 +45,10 @@ exports.run = {
             teks += data.map(([jid, _]) => '	◦ @' + jid.replace(/@.+/, '')).join('\n') + '\n\n'
             teks += global.footer
             client.sendMessageModify(m.chat, teks, m, {
-               title: '© neoxr-bot v2.2.0 (Public Bot)',
+               title: 'Siesta - Multi Device',
                ads: false,
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/3d20c23aafd4257325003.jpg')
             })
          } else if (args[0] == 2) {
             const data = global.db.setting.error
@@ -57,10 +57,10 @@ exports.run = {
             teks += data.map(cmd => '	◦ ' + isPrefix + cmd).join('\n') + '\n\n'
             teks += global.footer
             client.sendMessageModify(m.chat, teks, m, {
-               title: '© neoxr-bot v2.2.0 (Public Bot)',
+               title: 'Siesta - Multi Device',
                ads: false,
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/3d20c23aafd4257325003.jpg')
             })
          } else if (args[0] == 3) {
             const data = global.db.setting.mimic
@@ -69,10 +69,10 @@ exports.run = {
             teks += data.map(jid => '	◦ @' + jid.replace(/@.+/, '')).join('\n') + '\n\n'
             teks += global.footer
             client.sendMessageModify(m.chat, teks, m, {
-               title: '© neoxr-bot v2.2.0 (Public Bot)',
+               title: 'Siesta - Multi Device',
                ads: false,
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/3d20c23aafd4257325003.jpg')
             })
          } else if (args[0] == 4) {
             const data = global.db.setting.pluginDisable
@@ -81,10 +81,10 @@ exports.run = {
             teks += data.map(plugin => '	◦ ' + plugin + '.js').join('\n') + '\n\n'
             teks += global.footer
             client.sendMessageModify(m.chat, teks, m, {
-               title: '© neoxr-bot v2.2.0 (Public Bot)',
+               title: 'Siesta - Multi Device',
                ads: false,
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/3d20c23aafd4257325003.jpg')
             })
          } else if (args[0] == 5) {
             const data = Object.entries(global.db.users).filter(([_, data]) => data.premium)
@@ -93,10 +93,10 @@ exports.run = {
             teks += data.map(([jid, data]) => '	◦ @' + jid.replace(/@.+/, '') + '\n	 *Limit* : ' + Func.formatNumber(data.limit)).join('\n') + '\n\n'
             teks += global.footer
             client.sendMessageModify(m.chat, teks, m, {
-               title: '© neoxr-bot v2.2.0 (Public Bot)',
+               title: 'Siesta - Multi Device',
                ads: false,
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/3d20c23aafd4257325003.jpg')
             })
          } else if (args[0] == 6) {
             if (!isOwner) return client.reply(m.chat, global.status.owner, m)
@@ -106,10 +106,10 @@ exports.run = {
             teks += data.sort((a, b) => b[1].lastseen - a[1].lastseen).map(([jid, data]) => '	◦ @' + jid.replace(/@.+/, '') + '\n	     *Chat* : ' + Func.formatNumber(data.chat) + '\n	     *Lastchat* : ' + moment(data.lastseen).format('DD/MM/YY HH:mm:ss')).join('\n') + '\n\n'
             teks += global.footer
             client.sendMessageModify(m.chat, teks, m, {
-               title: '© neoxr-bot v2.2.0 (Public Bot)',
+               title: 'Siesta - Multi Device',
                ads: false,
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/3d20c23aafd4257325003.jpg')
             })
          }
       } catch (e) {
