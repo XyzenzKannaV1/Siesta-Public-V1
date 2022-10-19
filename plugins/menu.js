@@ -172,7 +172,7 @@ exports.run = {
       client.sendMessageModify(m.chat, captions, m, {
       	       title: 'Siesta - Multi Device',
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/1d91c4652a272a848aaa9.jpg'),
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/2829961484e68f4406405.mp4'),
                url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
             })
       } catch (e) {
