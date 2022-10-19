@@ -1,19 +1,25 @@
-let handler = async (m, { conn, usedPrefix, command }) => {
-    let bot = conn.user.jid
-    let q = m.quoted ? m.quoted : m
-    let mime = (q.msg || q).mimetype || ''
-    if (/image/.test(mime)) {
-        let img = await q.download()
-        if (!img) throw 'Gambar tidak ditemukan'
-        await conn.updateProfilePicture(bot, img)
-        conn.reply(m.chat, 'Sukses Mengganti Foto Profile Bot!', m)
-    } else throw `kirim/balas gambar dengan caption *${usedPrefix + command}*`
+exports.run = {
+   usage: ['setpp'],
+   use: 'reply photo',
+   category: 'owner',
+   async: async (m, {
+      client
+   }) => {
+      try {
+         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
+         if (/image\/(jpe?g|png)/.test(mime)) {
+            client.reply(m.chat, global.status.wait, m)
+            let media = await client.saveMediaMessage(m.quoted)
+            await client.updateProfilePicture(client.user.id, {
+               url: media
+            })
+            await Func.delay(3000).then(() => client.reply(m.chat, Func.texted('bold', `🚩 Profile photo has been successfully changed.`), m))
+         } else return client.reply(m.chat, Func.texted('bold', `🚩 Reply to the photo that will be made into the bot's profile photo.`), m)
+      } catch (e) {
+         client.reply(m.chat, Func.jsonFormat(e), m)
+      }
+   },
+   owner: true,
+   cache: true,
+   location: __filename
 }
-handler.help = ['setppbot']
-handler.tags = ['owner']
-
-handler.command = /^setppbot$/i
-
-handler.owner = true
-
-module.exports = handler
