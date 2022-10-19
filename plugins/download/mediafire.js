@@ -26,8 +26,8 @@ exports.run = {
          let chSize = Func.sizeLimit(json.data.size, global.max_upload)
          if (chSize.oversize) return client.reply(m.chat, `💀 File size (${json.data.size}) exceeds the maximum limit, download it by yourself via this link : ${await (await scrap.shorten(json.data.link)).data.url}`, m)
          client.sendMessageModify(m.chat, text, m, {
-            title: 'Siesta - Multi Device
-            largeThumb: true,
+            title: 'Siesta - Multi Device',
+            largeThumb: true
             thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d96fd468085f331b6944e.jpg')
          }).then(async () => {
             client.sendFile(m.chat, json.data.link, unescape(decode(json.data.filename)), '', m)
