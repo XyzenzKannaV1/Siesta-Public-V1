@@ -25,9 +25,10 @@ exports.run = {
       teks += sorted.slice(0, show).map(([cmd, prop], i) => (i + 1) + '. ' + Func.texted('bold', 'Command') + ' :  ' + Func.texted('monospace', isPrefix + cmd) + '\n    ' + Func.texted('bold', 'Hit') + ' : ' + Func.formatNumber(command == 'hitstat' ? prop.hitstat : prop.today) + 'x\n    ' + Func.texted('bold', 'Last Hit') + ' : ' + moment(prop.lasthit).format('DD/MM/YY HH:mm:ss')).join`\n`
       teks += `\n\n${global.footer}`
       client.sendMessageModify(m.chat, teks, m, {
+         title: 'Siesta - Multi Device',
          ads: false,
          largeThumb: true,
-         thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d826ed4128ba873017479.jpg')
+         thumbnail: await Func.fetchBuffer('https://telegra.ph/file/46f991eb9d60092227200.jpg')
       })
    },
    error: false,
