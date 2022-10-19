@@ -142,7 +142,7 @@ const connect = async () => {
       let meta = await (await client.groupMetadata(room.id))
       let member = room.participants[0]
       let text_welcome = `_*Makasih Udh Join +tag Selamat Datang Di +grup Semoga Betahh!!*_`
-      let text_left = `_*+tag Yahhh 1 Beban Keluarr Byeee👋*_`
+      let text_left = `_*+tag byee beban jangan balik lagi!!👋*_`
       let groupSet = global.db.groups[room.id]
       try {
          pic = await Func.fetchBuffer(await client.profilePictureUrl(member, 'image'))
@@ -159,7 +159,7 @@ const connect = async () => {
          }
          let txt = (groupSet.text_welcome != '' ? groupSet.text_welcome : text_welcome).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
          if (groupSet.welcome) client.sendMessageModify(room.id, txt, null, {
-         	title: 'Yahh 1 Beban Bertambah',
+         	title: 'Yahh beban grup bertambah',
             largeThumb: true,
             thumbnail: pic,
             url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
@@ -167,7 +167,7 @@ const connect = async () => {
       } else if (room.action == 'remove') {
          let txt = (groupSet.text_left != '' ? groupSet.text_left : text_left).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
          if (groupSet.left) client.sendMessageModify(room.id, txt, null, {
-            title: 'Yeyy Si Beban Keluar',
+            title: 'Sipp beban grup keluar',
             largeThumb: true,
             thumbnail: pic,
             url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis'
