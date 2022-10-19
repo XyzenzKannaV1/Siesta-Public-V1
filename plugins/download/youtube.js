@@ -46,6 +46,7 @@ exports.run = {
             if (chSize.oversize) return client.reply(m.chat, `💀 File size (${json.data.size}) exceeds the maximum limit, download it by yourself via this link : ${await (await scrap.shorten(json.data.url)).data.url}`, m)
             let isSize = (json.data.size).replace(/MB/g, '').trim()
             if (isSize > 99) return client.sendMessageModify(m.chat, caption, m, {
+               title: 'Siesta - Multi Device',
                largeThumb: true,
                thumbnail: await Func.fetchBuffer(json.thumbnail)
             }).then(async () => await client.sendFile(m.chat, json.data.url, json.data.filename, '', m, {
