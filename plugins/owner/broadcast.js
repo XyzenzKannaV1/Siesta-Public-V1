@@ -19,7 +19,7 @@ exports.run = {
             for (let jid of id) {
                await Func.delay(1500)
                await client.sendMessageModify(jid, text, null, {
-                  title: '© Siesta - Multi Device',
+                  title: '© Broadcast Siesta - Multi Device',
                   thumbnail: await Func.fetchBuffer('https://telegra.ph/file/42c98f6d0696730a84ce8.jpg'),
                   largeThumb: true,
                   url: 'https://chat.whatsapp.com/KbgGdT1cV3rD5JzJDZryis',
